@@ -26,10 +26,9 @@ class CookieStandCreateView(LoginRequiredMixin, CreateView):
     model = CookieStand
     fields = ["location", "average_cookies_per_sale", "owner"]
 
-    def form_valid(self, form):
-        print("Form is valid. Owner:", form.instance.owner)
-        form.instance.owner = self.request.user
-        return super().form_valid(form)
+    def get(self, request, *args, **kwargs):
+        print("Accessing CookieStandCreateView")
+        return super().get(request, *args, **kwargs)
 
 
 class CookieStandDeleteView(LoginRequiredMixin, DeleteView):

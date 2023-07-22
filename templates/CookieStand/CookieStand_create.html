@@ -4,16 +4,9 @@
 
 <form method="post">
   {% csrf_token %}
-  <label for="{{ form.location.id_for_label }}">Cookie stand Name</label>
-  {{ form.location }}
-
-  <label for="{{ form.average_cookies_per_sale.id_for_label }}">Cookies</label>
-  {{ form.average_cookies_per_sale }}
-
-  <label for="{{ form.owner.id_for_label }}">Reviewer</label>
-  {{ form.owner }}
-
-  <button type="submit">Create a Cookie Stand</button>
+  <h1>Create a Cookie Stand</h1>
+  {{ form.as_p }}
+  <button type="submit">Create</button>
 </form>
 
 {% endblock content %}
