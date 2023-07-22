@@ -27,6 +27,7 @@ class CookieStandCreateView(LoginRequiredMixin, CreateView):
     fields = ["location", "average_cookies_per_sale", "owner"]
 
     def form_valid(self, form):
+        print("Form is valid. Owner:", form.instance.owner)
         form.instance.owner = self.request.user
         return super().form_valid(form)
 

@@ -10,7 +10,7 @@ from .views_front import (
 urlpatterns = [
     path("", CookieStandListView.as_view(), name="CookieStand_list"),
     path("<int:pk>/", CookieStandDetailView.as_view(), name="CookieStand_detail"),
-    path("cookie_stands/create/", CookieStandCreateView.as_view(), name="create_cookie_stand"),
+    path("create/", CookieStandCreateView.as_view(), name="CookieStand_create"),
     path("<int:pk>/update/", CookieStandUpdateView.as_view(), name="CookieStand_update"),
     path("<int:pk>/delete/", CookieStandDeleteView.as_view(), name="CookieStand_delete"),
 ]
